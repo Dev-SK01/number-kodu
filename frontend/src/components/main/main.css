@@ -1,0 +1,11 @@
+.main{
+ min-height: 79vh;
+ max-height: 80vh;
+ width: 100vw;
+ background-color: white;
+ position: absolute;
+ top: 10rem;
+ border-top-right-radius: 50px;
+ border-top-left-radius: 50px;
+ padding-bottom: 10rem;
+};
