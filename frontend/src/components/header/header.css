@@ -14,7 +14,7 @@
     -webkit-backdrop-filter: blur( 0.5px );
 }
 
-img {
+.bg-img {
     height: 30vh !important;
     min-height: 25vh;
 }
