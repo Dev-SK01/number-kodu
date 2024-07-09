@@ -2,6 +2,7 @@ import React from 'react'
 import './main.css';
 import Search from './Search';
 import ResultCount from './ResultCount';
+import Results from './Results';
 
 
 const MainSection = () => {
@@ -9,6 +10,7 @@ const MainSection = () => {
     <section className='main col-12 col-sm-12 col-md-12 col-lg-12 col-xxl-12'>
       <Search />
       <ResultCount />
+      <Results />
     </section>
   )
 }
