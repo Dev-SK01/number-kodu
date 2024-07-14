@@ -1,8 +1,12 @@
-import React from "react";
+import React, { useEffect , useContext} from "react";
 import searchImg from "/assets/Search.svg";
 import locationImg from "/assets/Location.svg";
+import DataContext from "../context/DataContext";
 
 const Search = () => {
+  const {getLocation , error, getLocationByPostCode , nearLocation} = useContext(DataContext);
+getLocationByPostCode(623513);
+console.log(nearLocation)
   return (
     <div className="search-container">
       <div className="search-div">
