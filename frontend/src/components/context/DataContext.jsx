@@ -1,12 +1,13 @@
-import { useState, createContext } from "react";
+import { useState, createContext} from "react";
 import axios from 'axios';
+
+
 const DataContext = createContext({});
 
 export const DataProvider = ({ children }) => {
     const [location, setlocation] = useState(false);
     const [locationError , setlocationError] =useState(false);
-    const [nearLocation , setNearLocation] = useState();
-    let postCode;
+    const [nearLocation, setNearLocation] = useState([]);
     const data =  [
         {
           id: 1,
@@ -62,35 +63,36 @@ export const DataProvider = ({ children }) => {
 async function getLocationByLatLong(location){
   try{
     const res = await axios.get(`https://nominatim.openstreetmap.org/reverse?format=geojson&lat=${location.lat}&lon=${location.lon}&zoom=13&extratags=1&addressdetails=1&namedetails=1&polygon_svg=1`);
-     postCode = res.data.features[0].properties.address.postcode;
+    postCode = await res.data.features[0].properties.address.postcode;
     console.log(res.data.features[0].properties.address);
 
   }catch(err){
       postCode = null;
   }
 }
-
- async function getLocationByPostCode(postcode) {
-  let offices = []
+const getLocationByPostCode = async (postcode)=> {
+  let offices= [];
   try{
     const res = await axios.get(`https://api.postalpincode.in/pincode/${postcode}`);
-    await res.data[0].PostOffice.forEach((postoffice)=>{
-      offices.push(postoffice.Name);
-    });
-    // console.log(res.data[0].PostOffice);
-    console.log(offices);
+      // filtering the post office by name
+      await res.data[0].PostOffice.forEach((postoffice)=>{
+        offices.push(postoffice.Name);
+      });
+  //  console.log(offices)
+   setNearLocation(offices);
+   setlocationError(false)
   }catch(err){
-     setNearLocation(null);
+    setlocationError(true)
   } 
 }
     // data proider return data.
     return (
         <DataContext.Provider
-            value={{data,location , locationError , getLocation , error , getLocationByLatLong, getLocationByPostCode}}
+            value={{data,location , locationError , getLocation , error , getLocationByLatLong, getLocationByPostCode ,nearLocation }}
         >
             {children}
         </DataContext.Provider>
     )
 }
 
-export default DataContext
+export default DataContext;

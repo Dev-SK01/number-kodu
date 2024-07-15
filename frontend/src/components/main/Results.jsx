@@ -67,7 +67,7 @@ const Results = () => {
   ):
       (<div className="error container">
           <img src={sorryImg} alt="Sorry Image" className="img-fluid"/>
-          <p>Please allow location ^_^</p>
+          <p>Invalid PinCode ^_^</p>
         </div>)
        }
       
