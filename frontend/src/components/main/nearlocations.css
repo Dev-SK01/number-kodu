@@ -1,0 +1,47 @@
+.locations{
+    overflow-y: scroll;
+    max-height: 75vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.locations > button{
+    margin-top: 1rem;
+    margin-left: 4.5rem;
+    font-weight: bold;
+    text-align: start;
+    border: none;
+    background-color: white;
+}
+
+.locations > button:active{
+    background: rgba( 255, 255, 255, 0.35 );
+    box-shadow: 0 8px 32px 0 rgba(146, 146, 146, 0.37);
+    backdrop-filter: blur( 9px );
+    -webkit-backdrop-filter: blur( 9px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    font-size: larger;
+}
+.loading-container{
+    position:relative;
+    height: 70vh;
+}
+
+.element {
+    position:absolute;
+    font-size: 10rem;
+    top: 25%;
+    left: 25%;
+    animation: rotate 1s infinite;
+}
+
+@keyframes rotate {
+    0%{
+        transform: rotate(10deg);
+    }
+    100%{
+        transform: rotate(360deg);
+
+    }
+}

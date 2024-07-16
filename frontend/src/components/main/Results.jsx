@@ -13,63 +13,60 @@ const Results = () => {
   const {data,locationError} = useContext(DataContext);
   return (
     <div className="result-container col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 ">
-      {!locationError ? (data.length ? (
-        data.map((res) => (
-          <div className="results container" key={res.vehicleId}>
-            <div className="image">
-              <img
-                src={
-                  res.vehicleId == 1001
-                    ? autoImg
-                    : res.vehicleId == 1002
-                    ? carImg
-                    : res.vehicleId == 1003
-                    ? vanImg
-                    : res.vehicleId == 1004
-                    ? busImg
-                    : undefined
-                }
-                alt="VehiclesImage"
-              />
-            </div>
-            <div className="details">
-              <p className="name">{res.ownerName}</p>
-              <p className="address">{res.location}</p>
-              <div className="type">
-                <div>
-                  <p>Type : {res.type.toLocaleUpperCase()}</p>
-                </div>
-                <div>
-                  <a
-                    href={`https://wa.me/${res.number}`}
-                    className="whatsapp"
-                    target="_blank"
-                  >
-                    <img src={whatsApp} alt="WhatsApp" />
-                  </a>
-                  <a
-                    href={`tel:${res.number}`}
-                    className="whatsapp phone"
-                    target="_blank"
-                  >
-                    <img src={phone} alt="phone" />
-                  </a>
+      {
+        (data.length ? (
+          data.map((res) => (
+            <div className="results container" key={res.vehicleId}>
+              <div className="image">
+                <img
+                  src={
+                    res.vehicleId == 1001
+                      ? autoImg
+                      : res.vehicleId == 1002
+                      ? carImg
+                      : res.vehicleId == 1003
+                      ? vanImg
+                      : res.vehicleId == 1004
+                      ? busImg
+                      : undefined
+                  }
+                  alt="VehiclesImage"
+                />
+              </div>
+              <div className="details">
+                <p className="name">{res.ownerName}</p>
+                <p className="address">{res.location}</p>
+                <div className="type">
+                  <div>
+                    <p>Type : {res.type.toLocaleUpperCase()}</p>
+                  </div>
+                  <div>
+                    <a
+                      href={`https://wa.me/${res.number}`}
+                      className="whatsapp"
+                      target="_blank"
+                    >
+                      <img src={whatsApp} alt="WhatsApp" />
+                    </a>
+                    <a
+                      href={`tel:${res.number}`}
+                      className="whatsapp phone"
+                      target="_blank"
+                    >
+                      <img src={phone} alt="phone" />
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-        ))
-      ) : (
-        <div className="error container">
-          <img src={sorryImg} alt="Sorry Image" className="img-fluid"/>
-          <p>No Vehicles found ):</p>
-        </div>)
-  ):
-      (<div className="error container">
-          <img src={sorryImg} alt="Sorry Image" className="img-fluid"/>
-          <p>Invalid PinCode ^_^</p>
-        </div>)
-       }
+          ))
+        ) : (
+          <div className="error container">
+            <img src={sorryImg} alt="Sorry Image" className="img-fluid"/>
+            <p>No Vehicles found ):</p>
+          </div>)
+    )
+      }
       
     </div>
   );
