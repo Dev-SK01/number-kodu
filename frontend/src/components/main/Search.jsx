@@ -23,7 +23,7 @@ const Search = () => {
       setIsLoading(true);
       setTimeout(() => {
         getLocationByPostCode(Number(pincode));
-      }, 3000);
+      }, 1500);
     } else {
       alert("Pincode Must Be 6 Number");
     }
@@ -37,7 +37,7 @@ const Search = () => {
         setIsLoading(true); 
         setTimeout(() => {
           getLocationByPostCode(Number(pincode));
-        }, 3000);
+        }, 1500);
       } else {
         alert("Pincode Must Be 6 Number");
       }

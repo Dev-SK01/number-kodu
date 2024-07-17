@@ -5,7 +5,7 @@ import './nearlocations.css'
 
 const NearLocations = () => {
   const { nearLocation, locationError , getVehicleDataFromServer ,setIsLoading} = useContext(DataContext);
-
+// function for disable the location clicked by the user
   const disable =(e) => {
   //  console.dir(e.target)
    e.target.disabled = true
@@ -16,7 +16,7 @@ const NearLocations = () => {
     disable(e);
     setTimeout(()=>{
       getVehicleDataFromServer(location)
-    } ,3000)
+    } ,1500);
     
   }
   return (

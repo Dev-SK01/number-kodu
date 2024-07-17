@@ -9,8 +9,7 @@ import NearLocations from "./NearLocations";
 import Loading from "./Loading";
 
 const MainSection = () => {
-  const { nearLocation, data, isLoading } =
-    useContext(DataContext);
+  const { nearLocation, data, isLoading } = useContext(DataContext);
 
   return (
     <section className="main col-12 col-sm-12 col-md-12 col-lg-12 col-xxl-12">
@@ -18,8 +17,9 @@ const MainSection = () => {
       {isLoading ? (
         <Loading />
       ) : !nearLocation.length ? (
+        // shows the default home while user loads the app
         <div style={{ marginBlock: "5rem" }}>
-          <img src={homeImg} alt="Sorry Image" className="img-fluid" />
+          <img src={homeImg} alt="Home Image" className="img-fluid" />
         </div>
       ) : data.length ? (
         <>
@@ -29,8 +29,6 @@ const MainSection = () => {
       ) : (
         <NearLocations />
       )}
-      {/* <ResultCount />
-      <Results /> */}
     </section>
   );
 };
