@@ -56,7 +56,7 @@ export const DataProvider = ({ children }) => {
   const getVehicleDataFromServer = async (location) => {
     try {
       const res = await axios.get(
-        `http://localhost:2500/data?location=${location}`
+        `https://appsail-50021425660.development.catalystappsail.in/data?location=${location}`
       );
       // setting the data from the server
       if (res.data?.error) {

@@ -54,11 +54,11 @@ app.get('*', (req, res) => {
 });
 
 
-app.listen(process.env.PORT || 2500, (err) => {
+app.listen(process.env.X_ZOHO_CATALYST_LISTEN_PORT || 2500, (err) => {
     if (err) {
         console.log(err.message);
     } else {
-        console.log(`Server is Running On PORT ${process.env.PORT || 2500}`);
+        console.log(`Server is Running On PORT ${process.env.X_ZOHO_CATALYST_LISTEN_PORT || 2500}`);
     }
 });
 
