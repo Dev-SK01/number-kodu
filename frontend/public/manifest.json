@@ -1,0 +1,38 @@
+{
+    "short_name": "Number Kodu",
+    "name": "Number Kodu By WebMa ❤️",
+    "icons": [
+      {
+        "src": "notes-edu.png",
+        "sizes": "64x64 32x32 24x24 16x16 512x512",
+        "type": "image/x-icon"
+      },
+      {
+        "src": "notes-edu.png",
+        "type": "image/png",
+        "sizes": "192x192"
+      },
+      {
+        "src": "notes-edu.png",
+        "type": "image/png",
+        "sizes": "512x512"
+      }
+    ],
+    "start_url": "https://dev-sk01.github.io/number-kodu",
+    "display": "standalone",
+    "theme_color": "#ffffff",
+    "background_color": "#ffffff",
+    "id": "V2.0.0",
+    "description": "Its an contact Details providing site for local transport.",
+    "dir": "auto",
+    "lang": "en",
+    "categories": [
+      "personalization",
+      "utilities"
+    ],
+    "display_override": [
+      "window-controls-overlay",
+      "standalone"
+    ],
+    "scope": "https://dev-sk01.github.io/number-kodu"
+  }
