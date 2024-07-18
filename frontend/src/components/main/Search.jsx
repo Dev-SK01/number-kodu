@@ -4,7 +4,8 @@ import locationImg from "/assets/Location.svg";
 import DataContext from "../context/DataContext";
 
 const Search = () => {
-  const { getLocationByPostCode, setIsLoading } = useContext(DataContext);
+  const { getLocationByPostCode, setIsLoading, setData  } =
+    useContext(DataContext);
   const [pincode, setPinCode] = useState("");
 
   const getPincodeFromUser = (e) => {
@@ -21,6 +22,7 @@ const Search = () => {
       alert("Please Enter PinCode");
     } else if (pincode.length == 6) {
       setIsLoading(true);
+      setData([]);
       setTimeout(() => {
         getLocationByPostCode(Number(pincode));
       }, 1500);
@@ -34,7 +36,8 @@ const Search = () => {
       if (pincode.length == 0) {
         alert("Please Enter PinCode");
       } else if (pincode.length == 6) {
-        setIsLoading(true); 
+        setIsLoading(true);
+        setData([]);
         setTimeout(() => {
           getLocationByPostCode(Number(pincode));
         }, 1500);
@@ -58,13 +61,16 @@ const Search = () => {
             placeholder="Enter Your PinCode"
             onChange={(e) => getPincodeFromUser(e)}
             value={pincode ? pincode : ""}
-            onKeyDown={(e, pincode) => searchOnPressEnter(e)}
+            onKeyDown={(e) => searchOnPressEnter(e)}
           />
         </div>
         <div className="search-btn" onClick={() => SearchNearLocation(pincode)}>
           <img src={searchImg} alt="search-btn" />
         </div>
       </div>
+      {/* <div style={{ marginBlock: "5rem" }}>
+        <img src={homeImg} alt="Home Image" className="img-fluid" />
+      </div> */}
     </>
   );
 };

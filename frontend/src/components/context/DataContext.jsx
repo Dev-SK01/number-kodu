@@ -4,12 +4,14 @@ import axios from "axios";
 const DataContext = createContext({});
 
 export const DataProvider = ({ children }) => {
+  
   const [location, setlocation] = useState(false);
   const [locationError, setlocationError] = useState(false);
   const [nearLocation, setNearLocation] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
-  const data = [];
-  let dummy;
+  const [data, setData] = useState([]);
+  const [dataError , setDataError] = useState(false);
+
   function getLocation(pos) {
     const crd = pos.coords;
     const latitude = crd.latitude;
@@ -54,10 +56,17 @@ export const DataProvider = ({ children }) => {
   const getVehicleDataFromServer = async (location) => {
     try {
       const res = await axios.get(
-        `https://api.postalpincode.in/postoffice/${location}`
+        `http://localhost:2500/data?location=${location}`
       );
-      dummy = res.data;
-      console.log(dummy);
+      // setting the data from the server
+      if (res.data?.error) {
+        setDataError(true);
+        setData(res.data);
+        console.log(res.data.error);
+      } else {
+        setData(res.data);
+        console.log(res.data);
+      }
       setIsLoading(false);
     } catch (err) {
       setlocationError(true);
@@ -79,6 +88,9 @@ export const DataProvider = ({ children }) => {
         isLoading,
         setIsLoading,
         getVehicleDataFromServer,
+        setData,
+        dataError,
+        setDataError
       }}
     >
       {children}

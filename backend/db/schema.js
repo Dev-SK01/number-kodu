@@ -1,6 +1,7 @@
 const mongoose = require('mongoose')
 const {Schema} = mongoose;
 
+// vehicle schema for the database model
 const vehicleSchema = new Schema({
     id: Number,
     vehicleId: Number,

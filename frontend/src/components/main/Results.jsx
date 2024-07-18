@@ -10,11 +10,12 @@ import sorryImg from '/assets/sorry.svg';
 import DataContext from "../context/DataContext";
 
 const Results = () => {
-  const {data,locationError} = useContext(DataContext);
+  const {data,dataError} = useContext(DataContext);
+  console.log(dataError);
   return (
     <div className="result-container col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 ">
       {
-        (data.length ? (
+        ( !dataError? (
           data.map((res) => (
             <div className="results container" key={res.vehicleId}>
               <div className="image">
@@ -62,8 +63,8 @@ const Results = () => {
           ))
         ) : (
           <div className="error container">
+            <p>{data.error} 🥺</p>
             <img src={sorryImg} alt="Sorry Image" className="img-fluid"/>
-            <p>No Vehicles found ):</p>
           </div>)
     )
       }
