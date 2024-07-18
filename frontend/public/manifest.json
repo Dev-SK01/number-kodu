@@ -3,17 +3,17 @@
     "name": "Number Kodu By WebMa ❤️",
     "icons": [
       {
-        "src": "notes-edu.png",
+        "src": "number-kodu.png",
         "sizes": "64x64 32x32 24x24 16x16 512x512",
         "type": "image/x-icon"
       },
       {
-        "src": "notes-edu.png",
+        "src": "number-kodu.png",
         "type": "image/png",
         "sizes": "192x192"
       },
       {
-        "src": "notes-edu.png",
+        "src": "number-kodu.png",
         "type": "image/png",
         "sizes": "512x512"
       }
