@@ -4,16 +4,6 @@
     "icons": [
       {
         "src": "number-kodu.png",
-        "sizes": "64x64 32x32 24x24 16x16 512x512",
-        "type": "image/x-icon"
-      },
-      {
-        "src": "number-kodu.png",
-        "type": "image/png",
-        "sizes": "192x192"
-      },
-      {
-        "src": "number-kodu.png",
         "type": "image/png",
         "sizes": "512x512"
       }
