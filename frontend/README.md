@@ -2,4 +2,4 @@
 
 Number Kodu FrontEnd
 
-!logo['https://raw.githubusercontent.com/Dev-SK01/number-kodu/gh-pages/number-kodu.png']
+![Logo](https://raw.githubusercontent.com/Dev-SK01/number-kodu/gh-pages/number-kodu.png)
