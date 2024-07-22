@@ -4,8 +4,7 @@ import locationImg from "/assets/Location.svg";
 import DataContext from "../context/DataContext";
 
 const Search = () => {
-  const { getLocationByPostCode, setIsLoading, setData  } =
-    useContext(DataContext);
+  const { getLocationByPostCode, setIsLoading, setData  } = useContext(DataContext);
   const [pincode, setPinCode] = useState("");
 
   const getPincodeFromUser = (e) => {
@@ -41,6 +40,7 @@ const Search = () => {
         setTimeout(() => {
           getLocationByPostCode(Number(pincode));
         }, 1500);
+
       } else {
         alert("Pincode Must Be 6 Number");
       }

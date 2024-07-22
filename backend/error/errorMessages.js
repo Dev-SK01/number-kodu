@@ -1,7 +1,7 @@
 // this file contains all error messages
 
 const queryErrorMsg= {
-    error: 'Query parmeter not found',
+    error: 'Query parameter not found',
     suggestion: 'Request with query parameter'
 };
 

@@ -1,6 +1,7 @@
 import React from "react";
 import "./nearlocations.css";
 
+
 const Loading = () => {
   return (
     <div className="loading-container container">
@@ -16,3 +17,4 @@ const Loading = () => {
 };
 
 export default Loading;
+
